@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AppLayout } from "./AppLayout.jsx";
+import { Home } from "./components/pages/Home.jsx";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <p className="font-semibold text-3xl">Whereas recognition</p>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
