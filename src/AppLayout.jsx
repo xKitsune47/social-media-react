@@ -12,7 +12,6 @@ export const AppLayout = () => {
     <div className={`${base} ${small} ${big}`}>
       <Header />
       <Outlet />
-      <Footer />
     </div>
   );
 };
